@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#006233">
+<meta name="description" content="GabonDocs — Générez vos documents administratifs gabonais en 2 minutes">
+<title>GabonDocs — Documents Administratifs</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-flag">🇬🇦</span>
+      <div>
+        <span class="logo-name">GabonDocs</span>
+        <span class="logo-sub">Documents officiels</span>
+      </div>
+    </div>
+    <div class="header-badge">500 FCFA / doc</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="container">
+    <p class="hero-eyebrow">Rapide · Officiel · Imprimable</p>
+    <h1 class="hero-title">Vos documents<br><span class="hero-accent">administratifs</span><br>en 2 minutes</h1>
+    <p class="hero-desc">Remplissez le formulaire, payez 500 FCFA par Mobile Money, téléchargez votre document PDF prêt à imprimer. Fini les cybercafés.</p>
+    <a href="#documents" class="btn-primary">Choisir un document →</a>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
+<section class="steps-section">
+  <div class="container">
+    <h2 class="section-title">Comment ça marche</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Choisissez votre document</h3>
+        <p>Parmi notre liste de documents administratifs officiels gabonais</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>Remplissez le formulaire</h3>
+        <p>Vos informations personnelles en moins de 2 minutes, sur téléphone</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Payez 500 FCFA</h3>
+        <p>Airtel Money ou Moov Money — simple et instantané</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3>Téléchargez & imprimez</h3>
+        <p>PDF professionnel prêt à déposer dans n'importe quelle administration</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LISTE DES DOCUMENTS -->
+<section class="docs-section" id="documents">
+  <div class="container">
+    <h2 class="section-title">Nos documents disponibles</h2>
+    <div class="docs-grid">
+
+      <div class="doc-card" onclick="openModal('casier')">
+        <div class="doc-icon">📋</div>
+        <div class="doc-info">
+          <h3>Demande de casier judiciaire</h3>
+          <p>Formulaire officiel de demande de bulletin n°3</p>
+        </div>
+        <div class="doc-price">500 F</div>
+      </div>
+
+      <div class="doc-card" onclick="openModal('residence')">
+        <div class="doc-icon">🏠</div>
+        <div class="doc-info">
+          <h3>Attestation de résidence</h3>
+          <p>Certification de domicile pour démarches administratives</p>
+        </div>
+        <div class="doc-price">500 F</div>
+      </div>
+
+      <div class="doc-card" onclick="openModal('perte')">
+        <div class="doc-icon">📄</div>
+        <div class="doc-info">
+          <h3>Déclaration de perte</h3>
+          <p>Perte de pièce d'identité, permis, carte professionnelle</p>
+        </div>
+        <div class="doc-price">500 F</div>
+      </div>
+
+      <div class="doc-card" onclick="openModal('motivation')">
+        <div class="doc-icon">✉️</div>
+        <div class="doc-info">
+          <h3>Lettre de motivation</h3>
+          <p>Pour emploi dans la fonction publique gabonaise</p>
+        </div>
+        <div class="doc-price">500 F</div>
+      </div>
+
+      <div class="doc-card" onclick="openModal('autorisation')">
+        <div class="doc-icon">✅</div>
+        <div class="doc-info">
+          <h3>Demande d'autorisation</h3>
+          <p>Autorisation administrative générale ou commerciale</p>
+        </div>
+        <div class="doc-price">500 F</div>
+      </div>
+
+      <div class="doc-card" onclick="openModal('reclamation')">
+        <div class="doc-icon">📮</div>
+        <div class="doc-info">
+          <h3>Lettre de réclamation</h3>
+          <p>Réclamation officielle auprès d'une administration</p>
+        </div>
+        <div class="doc-price">500 F</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer-logo">🇬🇦 GabonDocs</p>
+    <p class="footer-text">Service 100% gabonais. Fonctionne sans internet après chargement.<br>Paiement sécurisé par Mobile Money.</p>
+    <p class="footer-copy">© 2026 GabonDocs — Tous droits réservés</p>
+  </div>
+</footer>
+
+<!-- ===== MODALS ===== -->
+
+<!-- MODAL CASIER JUDICIAIRE -->
+<div class="modal" id="modal-casier">
+  <div class="modal-overlay" onclick="closeModal('casier')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('casier')">✕</button>
+    <h2 class="modal-title">📋 Demande de casier judiciaire</h2>
+    <p class="modal-subtitle">Remplissez vos informations — document généré instantanément</p>
+    <form id="form-casier" class="doc-form">
+      <div class="form-row">
+        <div class="form-group"><label>Nom de famille *</label><input type="text" id="c-nom" placeholder="Ex: MOUSSAVOU" required></div>
+        <div class="form-group"><label>Prénom(s) *</label><input type="text" id="c-prenom" placeholder="Ex: Jean-Pierre" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Date de naissance *</label><input type="date" id="c-ddn" required></div>
+        <div class="form-group"><label>Lieu de naissance *</label><input type="text" id="c-naissance" placeholder="Ex: Libreville" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Nationalité</label><input type="text" id="c-nationalite" value="Gabonaise"></div>
+        <div class="form-group"><label>N° CNI / Passeport *</label><input type="text" id="c-cni" placeholder="Ex: GA123456" required></div>
+      </div>
+      <div class="form-group"><label>Adresse de résidence *</label><input type="text" id="c-adresse" placeholder="Ex: Quartier Owendo, Libreville" required></div>
+      <div class="form-group"><label>Motif de la demande *</label>
+        <select id="c-motif">
+          <option value="emploi">Recherche d'emploi</option>
+          <option value="contrat">Signature de contrat</option>
+          <option value="visa">Demande de visa</option>
+          <option value="marche">Appel d'offres / marché public</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Téléphone *</label><input type="tel" id="c-tel" placeholder="Ex: 077 00 00 00" required></div>
+      <button type="button" class="btn-pay" onclick="handlePay('casier')">💳 Payer 500 FCFA & Générer</button>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL RÉSIDENCE -->
+<div class="modal" id="modal-residence">
+  <div class="modal-overlay" onclick="closeModal('residence')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('residence')">✕</button>
+    <h2 class="modal-title">🏠 Attestation de résidence</h2>
+    <p class="modal-subtitle">Remplissez vos informations — document généré instantanément</p>
+    <form id="form-residence" class="doc-form">
+      <div class="form-row">
+        <div class="form-group"><label>Nom de famille *</label><input type="text" id="r-nom" placeholder="Ex: KOUMBA" required></div>
+        <div class="form-group"><label>Prénom(s) *</label><input type="text" id="r-prenom" placeholder="Ex: Marie" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Date de naissance *</label><input type="date" id="r-ddn" required></div>
+        <div class="form-group"><label>Profession</label><input type="text" id="r-profession" placeholder="Ex: Enseignante"></div>
+      </div>
+      <div class="form-group"><label>Adresse complète de résidence *</label><input type="text" id="r-adresse" placeholder="Ex: Rue des Palmiers, Quartier Glass, Libreville" required></div>
+      <div class="form-row">
+        <div class="form-group"><label>Ville *</label><input type="text" id="r-ville" placeholder="Ex: Libreville" required></div>
+        <div class="form-group"><label>Depuis (année)</label><input type="number" id="r-depuis" placeholder="Ex: 2019" min="1990" max="2026"></div>
+      </div>
+      <div class="form-group"><label>N° CNI *</label><input type="text" id="r-cni" placeholder="Ex: GA789012" required></div>
+      <div class="form-group"><label>Téléphone *</label><input type="tel" id="r-tel" placeholder="Ex: 066 00 00 00" required></div>
+      <button type="button" class="btn-pay" onclick="handlePay('residence')">💳 Payer 500 FCFA & Générer</button>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL PERTE -->
+<div class="modal" id="modal-perte">
+  <div class="modal-overlay" onclick="closeModal('perte')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('perte')">✕</button>
+    <h2 class="modal-title">📄 Déclaration de perte</h2>
+    <p class="modal-subtitle">Remplissez vos informations — document généré instantanément</p>
+    <form id="form-perte" class="doc-form">
+      <div class="form-row">
+        <div class="form-group"><label>Nom de famille *</label><input type="text" id="p-nom" placeholder="Ex: NGUEMA" required></div>
+        <div class="form-group"><label>Prénom(s) *</label><input type="text" id="p-prenom" placeholder="Ex: Albert" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Date de naissance *</label><input type="date" id="p-ddn" required></div>
+        <div class="form-group"><label>Lieu de naissance</label><input type="text" id="p-lieu" placeholder="Ex: Port-Gentil"></div>
+      </div>
+      <div class="form-group"><label>Document perdu *</label>
+        <select id="p-document">
+          <option value="Carte Nationale d'Identité">Carte Nationale d'Identité (CNI)</option>
+          <option value="Passeport">Passeport</option>
+          <option value="Permis de conduire">Permis de conduire</option>
+          <option value="Carte professionnelle">Carte professionnelle</option>
+          <option value="Carte d'électeur">Carte d'électeur</option>
+          <option value="Livret de famille">Livret de famille</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>N° du document perdu</label><input type="text" id="p-numperdu" placeholder="Si connu"></div>
+        <div class="form-group"><label>Date de la perte</label><input type="date" id="p-dateerte"></div>
+      </div>
+      <div class="form-group"><label>Lieu de la perte</label><input type="text" id="p-lieuperte" placeholder="Ex: Marché Mont-Bouët, Libreville"></div>
+      <div class="form-group"><label>Téléphone *</label><input type="tel" id="p-tel" placeholder="Ex: 074 00 00 00" required></div>
+      <button type="button" class="btn-pay" onclick="handlePay('perte')">💳 Payer 500 FCFA & Générer</button>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL MOTIVATION -->
+<div class="modal" id="modal-motivation">
+  <div class="modal-overlay" onclick="closeModal('motivation')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('motivation')">✕</button>
+    <h2 class="modal-title">✉️ Lettre de motivation</h2>
+    <p class="modal-subtitle">Remplissez vos informations — document généré instantanément</p>
+    <form id="form-motivation" class="doc-form">
+      <div class="form-row">
+        <div class="form-group"><label>Nom de famille *</label><input type="text" id="m-nom" placeholder="Ex: OBIANG" required></div>
+        <div class="form-group"><label>Prénom(s) *</label><input type="text" id="m-prenom" placeholder="Ex: Chantal" required></div>
+      </div>
+      <div class="form-group"><label>Adresse *</label><input type="text" id="m-adresse" placeholder="Ex: BP 1234, Libreville" required></div>
+      <div class="form-row">
+        <div class="form-group"><label>Téléphone *</label><input type="tel" id="m-tel" placeholder="Ex: 077 00 00 00" required></div>
+        <div class="form-group"><label>Email</label><input type="email" id="m-email" placeholder="Ex: chantal@gmail.com"></div>
+      </div>
+      <div class="form-group"><label>Poste sollicité *</label><input type="text" id="m-poste" placeholder="Ex: Secrétaire administrative" required></div>
+      <div class="form-group"><label>Ministère / Administration *</label><input type="text" id="m-ministere" placeholder="Ex: Ministère de l'Éducation Nationale" required></div>
+      <div class="form-group"><label>Diplôme le plus élevé *</label><input type="text" id="m-diplome" placeholder="Ex: Licence en Gestion, Université Omar Bongo, 2022" required></div>
+      <div class="form-group"><label>Expérience professionnelle</label><textarea id="m-experience" rows="2" placeholder="Ex: 3 ans comme assistant administratif à la mairie de Libreville..."></textarea></div>
+      <button type="button" class="btn-pay" onclick="handlePay('motivation')">💳 Payer 500 FCFA & Générer</button>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL AUTORISATION -->
+<div class="modal" id="modal-autorisation">
+  <div class="modal-overlay" onclick="closeModal('autorisation')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('autorisation')">✕</button>
+    <h2 class="modal-title">✅ Demande d'autorisation</h2>
+    <p class="modal-subtitle">Remplissez vos informations — document généré instantanément</p>
+    <form id="form-autorisation" class="doc-form">
+      <div class="form-row">
+        <div class="form-group"><label>Nom de famille *</label><input type="text" id="a-nom" placeholder="Ex: MBOUMBA" required></div>
+        <div class="form-group"><label>Prénom(s) *</label><input type="text" id="a-prenom" placeholder="Ex: Francis" required></div>
+      </div>
+      <div class="form-group"><label>Qualité / Fonction</label><input type="text" id="a-qualite" placeholder="Ex: Commerçant, Entrepreneur..."></div>
+      <div class="form-group"><label>Adresse *</label><input type="text" id="a-adresse" placeholder="Ex: Quartier Nzeng-Ayong, Libreville" required></div>
+      <div class="form-group"><label>Objet de l'autorisation *</label><input type="text" id="a-objet" placeholder="Ex: Ouverture d'un commerce, Organisation d'événement..." required></div>
+      <div class="form-group"><label>Autorité destinataire *</label><input type="text" id="a-destinataire" placeholder="Ex: M. le Préfet du Département du Komo-Mondah" required></div>
+      <div class="form-group"><label>Détails de la demande *</label><textarea id="a-details" rows="3" placeholder="Décrivez précisément l'objet de votre demande..." required></textarea></div>
+      <div class="form-group"><label>Téléphone *</label><input type="tel" id="a-tel" placeholder="Ex: 062 00 00 00" required></div>
+      <button type="button" class="btn-pay" onclick="handlePay('autorisation')">💳 Payer 500 FCFA & Générer</button>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL RÉCLAMATION -->
+<div class="modal" id="modal-reclamation">
+  <div class="modal-overlay" onclick="closeModal('reclamation')"></div>
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('reclamation')">✕</button>
+    <h2 class="modal-title">📮 Lettre de réclamation</h2>
+    <p class="modal-subtitle">Remplissez vos informations — document généré instantanément</p>
+    <form id="form-reclamation" class="doc-form">
+      <div class="form-row">
+        <div class="form-group"><label>Nom de famille *</label><input type="text" id="rec-nom" placeholder="Ex: EYEGHE" required></div>
+        <div class="form-group"><label>Prénom(s) *</label><input type="text" id="rec-prenom" placeholder="Ex: Sylvie" required></div>
+      </div>
+      <div class="form-group"><label>Adresse *</label><input type="text" id="rec-adresse" placeholder="Ex: Libreville, Gabon" required></div>
+      <div class="form-row">
+        <div class="form-group"><label>Téléphone *</label><input type="tel" id="rec-tel" placeholder="Ex: 077 00 00 00" required></div>
+        <div class="form-group"><label>Email</label><input type="email" id="rec-email" placeholder="Ex: sylvie@gmail.com"></div>
+      </div>
+      <div class="form-group"><label>Administration concernée *</label><input type="text" id="rec-admin" placeholder="Ex: CNSS, SEEG, Mairie de Libreville..." required></div>
+      <div class="form-group"><label>Objet de la réclamation *</label><input type="text" id="rec-objet" placeholder="Ex: Non-paiement de pension, Coupure abusive..." required></div>
+      <div class="form-group"><label>Référence dossier</label><input type="text" id="rec-ref" placeholder="N° de dossier ou de facture si disponible"></div>
+      <div class="form-group"><label>Description des faits *</label><textarea id="rec-faits" rows="3" placeholder="Décrivez chronologiquement la situation..." required></textarea></div>
+      <button type="button" class="btn-pay" onclick="handlePay('reclamation')">💳 Payer 500 FCFA & Générer</button>
+    </form>
+  </div>
+</div>
+
+<!-- MODAL PAIEMENT WHATSAPP -->
+<div class="modal" id="modal-paiement">
+  <div class="modal-overlay"></div>
+  <div class="modal-box modal-pay-box">
+    <h2 class="modal-title">💳 Paiement Mobile Money</h2>
+    <p class="modal-subtitle">2 étapes simples pour recevoir votre document</p>
+
+    <!-- ÉTAPE 1 : Faire le virement -->
+    <div class="pay-step">
+      <div class="pay-step-num">1</div>
+      <div class="pay-step-body">
+        <strong>Envoyez 500 FCFA à ce numéro</strong>
+        <div class="pay-number-box">
+          <span id="pay-numero-display">077 XX XX XX</span>
+          <button class="copy-num-btn" onclick="copyNumber()">Copier</button>
+        </div>
+        <div class="pay-ops">
+          <span class="pay-op airtel">Airtel Money *555#</span>
+          <span class="pay-op moov">Moov Money *150#</span>
+        </div>
+        <p class="pay-ref-line">Référence à indiquer : <strong id="pay-ref">GAB-000000</strong></p>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 2 : Envoyer le code sur WhatsApp -->
+    <div class="pay-step">
+      <div class="pay-step-num">2</div>
+      <div class="pay-step-body">
+        <strong>Envoyez votre code de transaction sur WhatsApp</strong>
+        <p class="pay-step-desc">Après le virement, vous recevez un SMS avec un code. Envoyez-le nous sur WhatsApp avec votre référence <strong id="pay-ref2">GAB-000000</strong> et nous vous envoyons votre document dans les 5 minutes.</p>
+        <button class="btn-whatsapp" id="btn-whatsapp" onclick="ouvrirWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Envoyer le code sur WhatsApp
+        </button>
+      </div>
+    </div>
+
+    <button class="btn-link" onclick="closePayModal()" style="margin-top:8px">← Retour au formulaire</button>
+  </div>
+</div>
+
+<!-- MODAL SUCCÈS -->
+<div class="modal" id="modal-success">
+  <div class="modal-overlay" onclick="closeSuccessModal()"></div>
+  <div class="modal-box modal-success-box">
+    <div class="success-icon">✅</div>
+    <h2>Message envoyé !</h2>
+    <p>Votre code de transaction a été envoyé sur WhatsApp. Vous recevrez votre document PDF <strong>dans les 5 minutes</strong>.</p>
+    <p style="font-size:13px;color:#9ca3af;margin-top:8px">Gardez WhatsApp ouvert pour recevoir votre document.</p>
+    <button class="btn-primary" onclick="closeSuccessModal()" style="margin-top:20px">Générer un autre document</button>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/pdf-generator.js"></script>
+</body>
+</html>
